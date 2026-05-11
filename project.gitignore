@@ -1,0 +1,9 @@
+# Code::Blocks folders
+bin/
+obj/
+# Compiled executables and objects
+*.exe
+*.o
+*.layout
+# Code::Blocks project temp files
+*.depend
