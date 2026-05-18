@@ -877,8 +877,9 @@
 1526093416 d:\codeblocks\mingw\x86_64-w64-mingw32\include\math.h
 	<crtdefs.h>
 
-1778699776 source:d:\pdf\sem-8\computer graphics\final\lab\s1\main.cpp
+1779055105 source:d:\pdf\sem-8\computer graphics\final\lab\s1\main.cpp
 	<windows.h>
 	<GL/glut.h>
 	<math.h>
+	<mmsystem.h>
 
