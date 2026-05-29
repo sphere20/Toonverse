@@ -15,7 +15,7 @@ bool boat = true;
 GLfloat cloudx = 0.0f;
 GLfloat cloudy = 0.0f;
 GLfloat birdtx = 0.0f;
-GLfloat birdty = 60.0f;
+GLfloat birdty = 0.0f;
 GLfloat birdangle = 0.0f;
 GLfloat balltx = 0.0f;
 GLfloat ballty = 0.0f;
@@ -988,10 +988,10 @@ void sceneNight()
     //body
     glPushMatrix();
     glTranslatef(boatx, boaty, 0.0f);
-    glColor3ub(205, 201, 201);
+    glColor3ub(255, 255, 0);
     polygon(-30, -25, 10, -25, 10, -27.5, -30, -27.5);
     polygon(-30, -27.5, 10, -27.5, 10, -30, -29, -30);
-    glColor3ub(0, 0, 0);
+    glColor3ub(0, 255, 0);
     polygon(-29, -30, 10, -30,10, -32.5, -28, -32.5);
     //pipe
     glColor3ub(0, 0, 0);
@@ -1030,7 +1030,7 @@ void sceneNight()
      glPushMatrix();
      glTranslatef(birdtx, birdty, 0.0f);
      glRotatef(birdangle, 0.0f, 0.0f, 1.0f);
-     glTranslatef(-18.0f, -65.0f, 0.0f);
+     glTranslatef(-18.0f, -65.0f, 0.0f);//to spin on spot central points
      glScalef(0.90, 0.90, 1.0);
      glColor3ub(0, 0, 0);
      triangle(-6, 55, 4.5, 62.5, 2, 55);
@@ -1655,13 +1655,17 @@ void keyboard(unsigned char key, int x, int y)
 
 void update(int value)
 {
+    //car right to left
     scartx = scartx-1.0f;
 
+    //car limit
     if(scartx < -200){
         scartx = 100;
     }
 
+    //boat right to left
     boatx = boatx-1.25f;
+    //boat up down
     if(boat == true)
     {
         boaty = boaty + 0.5;
@@ -1678,21 +1682,23 @@ void update(int value)
             boat = true;
         }
     }
+    //boat limit
 
     if(boatx < -150)
     {
         boatx = 200;
     }
-
+//cloud left to right
     cloudx = cloudx + 0.1f;
+    //cloud limit
     if(cloudx > 120)
     {
         cloudx = 0;
     }
-
+//bird left to right
     birdtx = birdtx + 1.0f;
-    birdangle = birdangle - 1;
-
+    birdangle = birdangle - 1;//clockwise rotation -1
+//bird limit
     if(birdtx > 120){
         birdtx = -120;
     }
@@ -1707,9 +1713,10 @@ void update(int value)
             bounceflag = false;
         }
     }
-
+//house bottom to top
     housety = housety+0.1f;
     housescale = housescale - 0.001f;
+    // house limit
     if(housety > 100)
     {
         housety = 0;
