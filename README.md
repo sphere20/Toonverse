@@ -4,5 +4,7 @@
 
 \## Project Video
 
-!\[Project Video](Toonverse.mp4)
+
+
+<video src="Toonverse.mp4" controls width="100%"></video>
 
