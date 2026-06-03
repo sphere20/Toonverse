@@ -1,10 +1,5 @@
-\# Toonverse
+# Toonverse
 
+## Project Video
 
-
-\## Project Video
-
-
-
-<video src="Toonverse.mp4" controls width="100%"></video>
-
+<video src="https://github.com/sphere20/Toonverse/raw/main/Toonverse.mp4" controls width="100%"></video>
